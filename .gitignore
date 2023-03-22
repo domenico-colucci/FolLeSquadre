@@ -4,6 +4,8 @@
 export.cfg
 export_presets.cfg
 
+#Trash ignores
+trash/
 # Mono-specific ignores
 .mono/
 data_*/
