@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "Node",
+"class": "Team",
+"language": "GDScript",
+"path": "res://scripts/Team.gd"
+} ]
+_global_script_class_icons={
+"GitAPI": "",
+"Team": ""
+}
+
+[application]
+
+config/name="My Team Manager"
+config/description="costruisce squadre di calcio a 7 o simili dato un pool di presenti"
+run/main_scene="res://Menu_iniziale.tscn"
+config/icon="res://asset/icon.png"
+
+[autoload]
+
+GlobVars="*res://glob_vars.gd"
+
+[display]
+
+window/size/width=2048
+window/size/height=1200
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor]
+
+version_control_autoload_on_startup=true
+version_control_plugin_name="GitAPI"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://asset/default_env.tres"

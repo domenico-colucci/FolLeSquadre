@@ -1,0 +1,206 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://asset/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Menu_iniziale.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Pick_players.tscn" type="PackedScene" id=3]
+[ext_resource path="res://asset/sounds/glass.ogg" type="AudioStream" id=4]
+[ext_resource path="res://asset/winDialog.tres" type="Theme" id=5]
+[ext_resource path="res://asset/main_theme.tres" type="Theme" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.156863, 0.298039, 0.392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.156863, 0.298039, 0.392157, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.156863, 0.298039, 0.392157, 1 )
+
+[node name="Menu_iniziale" type="Node2D"]
+script = ExtResource( 2 )
+MainAppScene = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 2048.0
+margin_bottom = 1200.0
+color = Color( 0.156863, 0.196078, 0.392157, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 2048.0
+margin_bottom = 1200.0
+custom_constants/margin_right = 200
+custom_constants/margin_top = 70
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 200.0
+margin_top = 70.0
+margin_right = 1848.0
+margin_bottom = 1100.0
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 1648.0
+margin_bottom = 513.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Le fo io le squadre..."
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 517.0
+margin_right = 1648.0
+margin_bottom = 1030.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 1648.0
+margin_bottom = 113.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="New team" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 50.0
+margin_right = 1598.0
+margin_bottom = 113.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "Crea team"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 133.0
+margin_right = 1648.0
+margin_bottom = 246.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="Load team" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+margin_left = 50.0
+margin_right = 1598.0
+margin_bottom = 113.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "Carica team"
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 266.0
+margin_right = 1648.0
+margin_bottom = 379.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="Fake team" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
+margin_left = 50.0
+margin_right = 1598.0
+margin_bottom = 113.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "Usa team dimostrativo"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 399.0
+margin_right = 1648.0
+margin_bottom = 513.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+margin_left = 50.0
+margin_right = 1598.0
+margin_bottom = 114.0
+custom_constants/separation = 50
+
+[node name="leftSpacer" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+margin_bottom = 114.0
+
+[node name="Made by" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+margin_left = 50.0
+margin_right = 499.0
+margin_bottom = 114.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+custom_constants/hseparation = 0
+custom_styles/hover = SubResource( 5 )
+text = "Creato da"
+
+[node name="Help" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+margin_left = 549.0
+margin_right = 998.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+custom_styles/hover = SubResource( 4 )
+text = "Help"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+margin_left = 1048.0
+margin_right = 1498.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+custom_constants/hseparation = 50
+custom_styles/hover = SubResource( 6 )
+text = "Esci"
+
+[node name="rightSpacer" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+margin_left = 1548.0
+margin_right = 1548.0
+margin_bottom = 114.0
+
+[node name="choice_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="HelpWindow" type="AcceptDialog" parent="."]
+margin_right = 1421.0
+margin_bottom = 1207.0
+rect_scale = Vector2( 0.9, 0.9 )
+theme = ExtResource( 5 )
+window_title = "Info"
+dialog_text = "Il bottone \"Crea team\" permette di costruire una 
+squadra da zero, definendo nome, ruolo e forza di 
+ciascun giocatore. Una volta creato un team lo si può
+ salvare e si può inziare a fare le squadre.
+
+Il bottone \"Carica team\" permette di caricare una 
+squadra salvata in precedenza o comunque caricare 
+dati di un team dal proprio hard disk. 
+
+Il bottone \"Usa team dimostrativo\" può essere utile 
+per sperimentare le funzionalità della applicazione. 
+Può essere un buon punto di partenza."
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New team" to="." method="_on_New_team_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Load team" to="." method="_onLoad_team_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4/Fake team" to="." method="_on_Fake_team_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/Made by" to="." method="_on_Made_by_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/Help" to="." method="_on_Help_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/Exit" to="." method="_on_Exit_button_up"]
