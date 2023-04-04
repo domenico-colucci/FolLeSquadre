@@ -8,6 +8,8 @@ export_presets.cfg
 
 saves/
 
+export/
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 
