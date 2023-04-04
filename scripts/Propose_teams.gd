@@ -221,3 +221,7 @@ func _on_Previous_pressed():
 	var forza_s=get_team_strength(scuri)
 	print('forza chiari = ',forza_c,' forza scuri = ', forza_s)
 	
+
+
+func _on_Button_button_up():
+		get_tree().quit() # Replace with function body.

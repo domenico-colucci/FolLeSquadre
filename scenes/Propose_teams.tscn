@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Propose_teams.gd" type="Script" id=1]
 [ext_resource path="res://asset/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://asset/generate_theme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/exit_scene.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 17
@@ -120,10 +121,14 @@ group = SubResource( 5 )
 text = "Cambia Presenti"
 
 [node name="Avvisi" type="Label" parent="Sfondo"]
-margin_left = 564.0
+margin_left = 540.33
 margin_top = 40.0
-margin_right = 1125.0
+margin_right = 1101.33
 margin_bottom = 100.0
+
+[node name="exit_scene" parent="Sfondo" instance=ExtResource( 4 )]
+position = Vector2( 0, 594.953 )
+scale = Vector2( 0.332754, 0.255894 )
 
 [node name="VBox" type="VBoxContainer" parent="."]
 margin_left = 589.789

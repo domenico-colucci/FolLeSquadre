@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://asset/share_small.png" type="Texture" id=1]
 [ext_resource path="res://asset/scuri.tres" type="Theme" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://asset/football-pitch_0.png" type="Texture" id=5]
 [ext_resource path="res://asset/chiari_theme.tres" type="Theme" id=6]
 [ext_resource path="res://asset/sounds/object.wav" type="AudioStream" id=7]
+[ext_resource path="res://asset/file_dialog.tres" type="Theme" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://asset/fonts/Xolonium-Regular.ttf"
@@ -188,10 +189,15 @@ rect_rotation = 270.0
 theme = ExtResource( 2 )
 
 [node name="FileDialog" type="FileDialog" parent="."]
-margin_right = 364.0
-margin_bottom = 130.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1550.0
+margin_bottom = 550.0
 rect_min_size = Vector2( 400, 140 )
-window_title = "Salva un file"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+window_title = "Save screenshot"
 resizable = true
 dialog_text = "Scegli una cartella ove salvare la schermata"
 access = 2

@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/pick_players.gd" type="Script" id=1]
 [ext_resource path="res://asset/winDialog.tres" type="Theme" id=2]
+[ext_resource path="res://scenes/exit_scene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://asset/sounds/explosion.wav" type="AudioStream" id=4]
 [ext_resource path="res://asset/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://asset/grid_theme.tres" type="Theme" id=6]
@@ -195,6 +196,10 @@ custom_fonts/font = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 align = 1
 valign = 1
+
+[node name="exit_scene" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 1100 )
+scale = Vector2( 0.5, 0.5 )
 
 [connection signal="pressed" from="MarginContainer/Container/Bottone_vai" to="." method="_on_Bottone_vai_pressed"]
 [connection signal="button_up" from="edit_team_button" to="." method="_on_edit_team_button_button_up"]

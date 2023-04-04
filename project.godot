@@ -9,24 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://addons/godot-git-plugin/git_api.gdns"
-}, {
 "base": "Node",
 "class": "Team",
 "language": "GDScript",
 "path": "res://scripts/Team.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": "",
 "Team": ""
 }
 
 [application]
 
-config/name="My Team Manager"
+config/name="FolLeSquadre"
 config/description="costruisce squadre di calcio a 7 o simili dato un pool di presenti"
 run/main_scene="res://Menu_iniziale.tscn"
 config/icon="res://asset/icon.png"
@@ -39,6 +33,8 @@ GlobVars="*res://glob_vars.gd"
 
 window/size/width=2048
 window/size/height=1200
+window/size/fullscreen=true
+window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -61,7 +57,8 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://asset/default_env.tres"

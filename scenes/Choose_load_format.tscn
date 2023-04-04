@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Choose_load_format.gd" type="Script" id=1]
 [ext_resource path="res://asset/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://asset/Pop_team.tres" type="Theme" id=3]
 [ext_resource path="res://asset/prova_theme.tres" type="Theme" id=4]
+[ext_resource path="res://asset/file_dialog.tres" type="Theme" id=5]
+[ext_resource path="res://scenes/exit_scene.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -106,10 +108,12 @@ margin_left = 50.0
 margin_right = 1250.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 400, 140 )
-window_title = "Apri un file"
+theme = ExtResource( 5 )
+window_title = "Open a File"
 resizable = true
 mode = 0
 access = 2
+show_hidden_files = true
 
 [node name="Right_spacer4" type="Control" parent="VBoxContainer/CSV_Container"]
 margin_left = 1998.0
@@ -171,12 +175,14 @@ margin_bottom = -53.0
 rect_min_size = Vector2( 400, 140 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-window_title = "Apri un file"
+theme = ExtResource( 5 )
+window_title = "Open a File"
 resizable = true
 dialog_text = "Scegli un file JSON"
 dialog_hide_on_ok = true
 mode = 0
 access = 2
+show_hidden_files = true
 
 [node name="Rightt_spacer3" type="Control" parent="VBoxContainer/JSON_Container2"]
 margin_left = 1998.0
@@ -232,12 +238,14 @@ margin_bottom = -53.0
 rect_min_size = Vector2( 400, 140 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-window_title = "Apri un file"
+theme = ExtResource( 5 )
+window_title = "Open a File"
 resizable = true
 dialog_text = "Scegli un file JSON"
 dialog_hide_on_ok = true
 mode = 0
 access = 2
+show_hidden_files = true
 
 [node name="Rightt_spacer3" type="Control" parent="VBoxContainer/PreviouslySaved"]
 margin_left = 1998.0
@@ -309,6 +317,10 @@ margin_top = 1186.0
 margin_right = 2048.0
 margin_bottom = 1206.0
 rect_min_size = Vector2( 0, 20 )
+
+[node name="exit_scene" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 1100 )
+scale = Vector2( 0.5, 0.5 )
 
 [connection signal="button_up" from="VBoxContainer/CSV_Container/CSV_Button" to="." method="_on_CSV_Button_button_up"]
 [connection signal="file_selected" from="VBoxContainer/CSV_Container/FileDialog_CSV" to="." method="_on_FileDialog_CSV_file_selected"]
